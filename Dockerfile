@@ -1,13 +1,13 @@
-FROM node
+FROM node:12-alpine3.14
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY package.json /app
 
-RUN npm install
+RUN npm ci --only=production && npm cache clean --force
 
-COPY . .
+COPY . /app
 
-EXPOSE 3000
+CMD node index.js
 
-CMD ["node", "index.js"]
+EXPOSE 8081
