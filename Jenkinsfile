@@ -20,7 +20,7 @@ pipeline {
     }
     stage('Checkout Source') {
         steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'RajeshVE22', url: 'https://github.com/RajeshVE22/nodeApp.git']]])     
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'RajeshVE22', url: 'https://github.com/RajeshVE22/nodejsapp.git']]])     
         }
     }
 
